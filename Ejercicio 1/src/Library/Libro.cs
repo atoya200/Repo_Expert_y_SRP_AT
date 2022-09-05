@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace SRP
 {
@@ -8,8 +9,7 @@ namespace SRP
         public string Title { get ; }
         public string Author { get ; }
         public string Code { get ;  }
-        public string LibrarySector { get ; set; }
-        public string LibraryShelve { get ; set; }
+        
 
         public Book(String title, String author, String code)
         {
@@ -18,29 +18,28 @@ namespace SRP
             this.Code = code;
         }
 
-    /* 
-        Si cambia la forma en la que se almacenan los libros, hay que registrar donde estan ahora, 
-        en que biblioteca estan. Si estan en físico o digital. Entonces hay que cambiar. 
-     */
-        public void ShelveBook(String sector, String shelve)
+        public string MostrarInformacion()
         {
-            this.LibrarySector = sector;
-            this.LibraryShelve = shelve;
+            StringBuilder datos = new StringBuilder();
+            datos.Append($"Tiulo: {this.Title}\n");
+            datos.Append($"Autor: {this.Author}\n");
+            datos.Append($"Codigo: {this.Code}\n");
+            return datos.ToString();
         }
 
     /* 
-        Si se quiere guardar en otro momento o dejar una orden para guardar, es decir
-        dejar anotado que se quiere guardar o se debe guardar. No hay un seguimiento de la 
-        acción en sí. Se guarda y listo, pero en una biblioteca grande como la es la de la UCU, puede
-        digitarse el guardado del libro el día de hoy pero hacerse realmente en 3 días. Entonces, si se quiere
-        dejar esa orden debería haber una clase que lo haga. 
+    Esta clase no cumple con el principo SRP debido a que hay varias razones de cambio, como si 
+    además de haber libros físicos como en este caso, hubiesen libros digitales, entonces al haber
+    de dos tipos habrían dos formas de almacenar, por ende habría que cambiar la forma de almacenar. 
 
-        Si se quisiera saber que funcionario de la biblioteca fue el que guardo el libro, habría que crear 
-        una clase exclusiva para almacenar, teniendo en cuenta el nombre o código de funcionario.
+    Por otro lado, si quisiese verse la información de los libros almacenados hay datos que estan 
+    en un libro y no en el otro, además si se cambia la forma de hacer esto habrán más motivos de cambio. 
+    Por ende se debería hacer una clase para cada tipo de libro, una para cada tipo de almacenaje y una 
+    para imprimir los datos de los libros almacenados. 
    */
     }
+    
 
 
-   // public class ShelveBook:
 
 }
