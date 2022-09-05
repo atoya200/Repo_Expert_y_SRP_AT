@@ -1,0 +1,43 @@
+Lo que necesito:
+
+Clases:
+Necesito una clase ShalveBook para almacenar efectivamente un libro
+Luego necesito una clase Orden, para guardar eso de una orden para almacenar
+Clase libroDigital
+
+
+La clase almacenar tendría que tener estos atributos (listo)
+edificio para saber si esta en el central u otro
+this.LibrarySector = sector;
+this.LibraryShelve = shelve;
+Persona que lo almaceno
+
+
+Métodos de almacenar (listo)
+almacenar físico
+usa lo normal
+
+almacenar digital (listo)
+necesita la url de donde sale el archivo
+url de a donde va
+que libro es
+
+Clase orden tendría que tener (me parece que es innecesaria, revisar más tarde esta idea y los comentarios)
+libro
+cantidad
+tipo de libro
+estado
+
+
+La clase LibroDigital tendría: V
+Autor
+titulo
+Codigo
+peso
+tipo de archivo
+url local, de donde se saco como para poder acceder a el
+
+/////
+Al poder ser digital, tendría que haber otra clase, para poder representar 
+mejor sus atributos, como tipo de archivo, peso, entre otros
+
